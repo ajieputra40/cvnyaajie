@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ajie Putra Perdana – Tech Stack CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-page: #f5f5f7;
+      --bg-card: #ffffff;
+      --text-main: #111111;
+      --text-muted: #6e6e73;
+      --blue-apple: #0071e3;
+      --border-soft: #d2d2d7;
+      --radius-lg: 28px;
+      --radius-md: 24px;
+      --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.18);
+      --max-width: 980px;
+      --transition: 0.25s ease-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text",
+        "Inter", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Top nav (very Apple-ish) */
+    .nav {
+      background: rgba(244, 244, 246, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 16px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .nav-logo {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 15%, #fff, #ff9f4a);
+      box-shadow: 0 6px 16px rgba(255, 159, 74, 0.6);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      color: #3a3a3c;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: #0071e3;
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero gift-like section */
+    .hero {
+      padding: 40px 0 28px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 34px;
+      margin: 0 auto 20px;
+      background: conic-gradient(
+        from 210deg,
+        #ff8c3f,
+        #ffb86c,
+        #ffd6a1,
+        #ffd6a1,
+        #ff8c3f
+      );
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-icon::before {
+      /* simple "gift ribbon" */
+      content: "";
+      position: absolute;
+      inset: 22px 38px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 14px auto 4px;
+      overflow: hidden;
+      border: 3px solid #ffffff;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-eyebrow {
+      font-size: 14px;
+      color: #6e6e73;
+      margin-bottom: 4px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      color: #6e6e73;
+      margin-bottom: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #0071e3;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #0077ed;
+      box-shadow: 0 12px 40px rgba(0, 113, 227, 0.5);
+    }
+
+    .btn-ghost {
+      border-color: #d2d2d7;
+      color: #0071e3;
+      background: #ffffff;
+    }
+
+    .btn-ghost:hover {
+      background: #f5f5f7;
+    }
+
+    /* Big "main product" card (for core profile) */
+    .panel-main {
+      background: #000000;
+      color: #f5f5f7;
+      border-radius: var(--radius-lg);
+      padding: 42px 30px 30px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .panel-main-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .panel-main-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .panel-main-tagline {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .panel-main-copy {
+      font-size: 15px;
+      color: #c7c7cc;
+      margin-bottom: 16px;
+      max-width: 430px;
+    }
+
+    .panel-main-metadata {
+      font-size: 13px;
+      color: #9f9fa6;
+      line-height: 1.7;
+    }
+
+    .panel-main-cta {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .panel-main-cta .btn {
+      font-size: 13px;
+    }
+
+    .panel-main-visual {
+      border-radius: 36px;
+      background: radial-gradient(circle at 10% 0, #ffb452, #d24b07 60%);
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.85);
+    }
+
+    .panel-main-visual::before,
+    /* .panel-main-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.18);
+    } */
+
+    .panel-main-visual::before {
+      inset: 16px 18px 44px 18px;
+    }
+
+    .panel-main-visual::after {
+      inset: 82px 60px 20px 60px;
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .panel-main-pill {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      color: #ffeeda;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .panel-main-info {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      font-size: 12px;
+      color: #ffeeda;
+    }
+
+    .panel-main-info strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    /* Dual panels (top row after hero) */
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 26px 22px 18px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      row-gap: 18px;
+    }
+
+    .card-header {
+      text-align: center;
+    }
+
+    .card-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .card-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .card-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .card-copy {
+      font-size: 13px;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    .card-visual {
+      border-radius: 22px;
+      height: 150px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Flutter visual */
+    .card-flutter .card-visual {
+      background: radial-gradient(circle at 0 0, #61dafb, #01579b 60%);
+    }
+
+    .card-flutter .card-visual::before,
+    .card-flutter .card-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: rgba(0, 0, 0, 0.16);
+    }
+
+    .card-flutter .card-visual::before {
+      inset: 12px 14px 50px 14px;
+    }
+
+    .card-flutter .card-visual::after {
+      inset: 76px 54px 12px 54px;
+    }
+
+    /* Odoo visual */
+    .card-odoo .card-visual {
+      background: radial-gradient(circle at 0 0, #7c4dff, #4caf50 65%);
+    }
+
+    .card-odoo .card-visual::before,
+    .card-odoo .card-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .card-odoo .card-visual::before {
+      width: 80px;
+      height: 80px;
+      right: -10px;
+      bottom: -10px;
+      opacity: 0.9;
+    }
+
+    .card-odoo .card-visual::after {
+      width: 50px;
+      height: 50px;
+      left: 16px;
+      top: 18px;
+      opacity: 0.85;
+    }
+
+    /* 3x2 grid like Apple’s product tiles */
+    .grid-tiles {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .tile {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 22px 20px 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      row-gap: 14px;
+    }
+
+    .tile-header {
+      text-align: center;
+    }
+
+    .tile-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .tile-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .tile-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .tile-copy {
+      font-size: 13px;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    .tile-visual {
+      border-radius: 20px;
+      height: 130px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile-backend .tile-visual {
+      background: linear-gradient(135deg, #002b5c, #4285f4);
+    }
+
+    .tile-backend .tile-visual::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.24);
+    }
+
+    .tile-data .tile-visual {
+      background: linear-gradient(135deg, #ffd54f, #ff7043);
+    }
+
+    .tile-data .tile-visual::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.6);
+    }
+
+    .tile-web .tile-visual {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    .tile-web .tile-visual::before,
+    .tile-web .tile-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.87);
+    }
+
+    .tile-web .tile-visual::before {
+      inset: 12px 18px 60px 18px;
+    }
+
+    .tile-web .tile-visual::after {
+      inset: 70px 40px 12px 40px;
+    }
+
+    .tile-wp .tile-visual {
+      background: radial-gradient(circle at 0 0, #21759b, #111827 70%);
+    }
+
+    .tile-wp .tile-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+    }
+
+    /* Details (like "Learn more") */
+    details.stack-details {
+      margin-top: 10px;
+      border-top: 1px solid #e5e5ea;
+      padding-top: 10px;
+    }
+
+    details.stack-details summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 13px;
+      color: #0071e3;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    details.stack-details summary::after {
+      content: "›";
+      font-size: 12px;
+      transition: transform 0.2s ease-out;
+    }
+
+    details[open].stack-details summary::after {
+      transform: rotate(90deg);
+    }
+
+    details.stack-details ul {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .panel-main-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .panel-main-visual {
+        margin-top: 16px;
+      }
+      .grid-two,
+      .grid-tiles {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .card-content,
+      .tile-body {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .panel-main {
+        padding-inline: 20px;
+      }
+    }
+
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Optional stagger delay */
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="nav-logo"></div>
+        <span>Ajie Putra Perdana</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#top">Overview</a>
+        <a href="#flutter">Flutter &amp; Mobile</a>
+        <a href="#odoo">Odoo / ERP</a>
+        <a href="#web">Web</a>
+        <a href="#backend">Back End</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Photo with reveal -->
+      <div class="hero-photo reveal reveal-delay-1">
+        <img src="ajie.png" alt="Ajie Putra Perdana" />
+      </div>
+
+      <p class="hero-eyebrow reveal reveal-delay-1">
+        Give your team something special.
+      </p>
+      <h1 class="hero-title reveal reveal-delay-2">
+        A CV that feels like a product page.
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-3">
+        Explore Ajie’s 6+ years of experience by tech stack – Flutter, Odoo, web,
+        back end, data, and more.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-4">
+        <a class="btn btn-primary" href="#">
+          Download full CV (PDF)
+        </a>
+        <a class="btn btn-ghost" href="#contact">
+          Get in touch
+        </a>
+      </div>
+    </section>
+
+    <!-- MAIN PROFILE PANEL -->
+    <section>
+      <article class="panel-main reveal">
+        <div class="panel-main-inner">
+          <div>
+            <h2 class="panel-main-title">Ajie Putra Perdana</h2>
+            <p class="panel-main-tagline">Software Developer · Full-stack across platforms.</p>
+            <p class="panel-main-copy">
+              From supply chain and banking dashboards to EV super apps and harvest
+              management systems, Ajie builds products that connect APIs, devices,
+              and real users. Strong in Flutter, web front-end, ASP.NET back end,
+              Python automation, and ERP/Odoo.
+            </p>
+            <div class="panel-main-metadata">
+              <strong>Based in:</strong> Bekasi, Indonesia<br />
+              <strong>Phone:</strong> +62 8782 1790 323<br />
+              <strong>Email:</strong> ajieputra40@gmail.com<br />
+              <strong>LinkedIn:</strong> Ajie Putra Perdana<br />
+              <strong>Education:</strong> Bachelor’s Degree in Computer Science,
+              Institut Teknologi Nasional
+            </div>
+
+            <div class="panel-main-cta">
+              <a class="btn btn-primary" href="#flutter">View by tech stack</a>
+              <a class="btn btn-ghost" href="#backend">See integrations work</a>
+            </div>
+          </div>
+
+          <div class="panel-main-visual">
+            <div class="panel-main-pill">Multi-stack in one profile</div>
+            <div class="panel-main-info">
+              <strong>6+ years</strong>
+              Shipping mobile apps, dashboards, and services<br />
+              Telecom · Banking · EV · Palm Oil · Government · Media
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- FIRST ROW: FLUTTER / ODOO -->
+    <section class="grid-two">
+      <!-- Flutter & Mobile -->
+      <article class="card card-flutter reveal" id="flutter">
+        <header class="card-header">
+          <p class="card-eyebrow">Mobile · Flutter · Kotlin</p>
+          <h2 class="card-title">Flutter &amp; Mobile Experience</h2>
+          <p class="card-sub">
+            All the control in your hand – EV bikes, harvest fields, canteens, and more.
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="card-copy">
+            Ajie has built multiple production mobile apps, from EV bike control
+            to palm oil harvest tracking, queue management, and NFC/RFID tools.
+            Apps are designed to feel simple for users, but are fully connected to
+            APIs, IoT devices, and back-end systems.
+            <details class="stack-details">
+              <summary>See mobile projects</summary>
+              <ul>
+                <li>
+                  <strong>Huawei – Garuda Eyes</strong> · Flutter mobile app
+                  for network monitoring.
+                </li>
+                <li>
+                  <strong>Charged Indonesia – Charged Super App</strong> · EV
+                  bike control (on/off, speed), account, subscriptions, and
+                  purchases.
+                </li>
+                <li>
+                  <strong>Dharma Satya Nusantara – HARMONY</strong> · Mobile
+                  harvest management app for palm oil operations.
+                </li>
+                <li>
+                  <strong>Dharma Satya Nusantara – Drupadi</strong> · Queue
+                  management app for the canteen; enhancements for ELHP to
+                  support harvesters and transporters.
+                </li>
+                <li>
+                  <strong>Pangan App</strong> · Kotlin-based food e-commerce
+                  app for ordering and payments with user management.
+                </li>
+                <li>
+                  <strong>Permana Solution</strong> · Mobile apps for reading
+                  and writing data via NFC and UHF RFID on cables and ODP boxes.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="card-visual"></div>
+        </div>
+      </article>
+
+      <!-- Odoo / ERP / Systems -->
+      <article class="card card-odoo reveal" id="odoo">
+        <header class="card-header">
+          <p class="card-eyebrow">ERP · Integrations · Odoo-style</p>
+          <h2 class="card-title">Odoo &amp; Operational Systems</h2>
+          <p class="card-sub">
+            Structured workflows for real-world operations – from warehouses to plantations.
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="card-copy">
+            Ajie’s server-side work often looks like ERP: approvals, grading,
+            harvest tracking, ticketing, digital forms, and reconciliations.
+            At <strong>PT Putra Mulia Telecommunication</strong>, he is also
+            building Odoo-based internal tools for fixed assets, approval
+            workflows, and item requests used across teams.
+            <details class="stack-details">
+              <summary>See ERP-style work</summary>
+              <ul>
+                <li>
+                  <strong>United Tractors</strong> · Middleware and microservices
+                  integrating SAP, APIs, and warehouse management systems – the
+                  backbone for operational data.
+                </li>
+                <li>
+                  <strong>Dharma Satya Nusantara</strong> · HARMONY &amp;
+                  grading systems with APIs, Spot Check and Approve Sampling
+                  Grading menus, and CRUD pages for master data.
+                </li>
+                <li>
+                  <strong>Putra Mulia Telecommunication – SPE Digitalization</strong>
+                  · Workflow application for SPE digitalization, including
+                  reconciliation and PDF generation to replace manual processes.
+                </li>
+                <li>
+                  <strong>Putra Mulia Telecommunication – Internal Odoo Apps</strong>
+                  · Fixed asset tools, multi-step approval workflows, and item
+                  request modules for internal company operations.
+                </li>
+                <li>
+                  <strong>Hexadata Primakom – Gate Out Parking System</strong>
+                  · Java desktop app used operationally at RSUD Ujungberung.
+                </li>
+                <li>
+                  <strong>Ministry of Villages</strong> · Admin website and
+                  public data portal for national-level operations.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="card-visual"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SECOND / THIRD ROW: OTHER STACKS -->
+    <section class="grid-tiles">
+      <!-- Web Frontend -->
+      <article class="tile tile-web reveal" id="web">
+        <header class="tile-header">
+          <h2 class="tile-title">Web Front-End</h2>
+          <p class="tile-sub">
+            React, Vue, CodeIgniter, jQuery – from dashboards to e-commerce.
+          </p>
+        </header>
+        <div class="tile-body">
+          <div class="tile-copy">
+            Ajie has delivered a wide range of web interfaces: telecom and
+            banking dashboards, admin portals for ministries and airports, gold
+            e-commerce, TV / media layouts, and static marketing pages.
+            <details class="stack-details">
+              <summary>See front-end projects</summary>
+              <ul>
+                <li>
+                  <strong>Advanced Technology Facility</strong> · Supply chain
+                  management UI using CodeIgniter.
+                </li>
+                <li>
+                  <strong>RawApp Start Up</strong> · Caringin Traditional
+                  Market SCM, Mitra Utama Rasa SCM (CodeIgniter) and merchant
+                  admin portal for Sultan Mahmud Badaruddin II Airport
+                  (ReactJS).
+                </li>
+                <li>
+                  <strong>Huawei</strong> · XL Axiata Customer Complaint and
+                  Work Order dashboards using Huawei OWS; TSS Dashboard using
+                  React.js; Garuda Eyes website layouts.
+                </li>
+                <li>
+                  <strong>Galeri 24 (Pegadaian)</strong> · Admin and
+                  e-commerce website for gold transactions in the Galeri 24 app
+                  using ReactJS.
+                </li>
+                <li>
+                  <strong>Studypool</strong> · jQuery plugin to display and
+                  download PDFs efficiently.
+                </li>
+                <li>
+                  <strong>Indo Alt Coin</strong> · Static marketing website
+                  using pure HTML and CSS.
+                </li>
+                <li>
+                  <strong>Ministry of Villages</strong> · Admin and public
+                  sites for managing and displaying ministry data.
+                </li>
+                <li>
+                  <strong>RCTI+</strong> · Ad banners, story ads, and Trebel
+                  Music landing page on mobile web, integrating innoPlayer and
+                  WebSockets.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="tile-visual"></div>
+        </div>
+      </article>
+
+      <!-- Back End & Integrations -->
+      <article class="tile tile-backend reveal" id="backend">
+        <header class="tile-header">
+          <h2 class="tile-title">Back End &amp; Integrations</h2>
+          <p class="tile-sub">
+            ASP.NET, REST APIs, microservices – wired into SAP and beyond.
+          </p>
+        </header>
+        <div class="tile-body">
+          <div class="tile-copy">
+            Behind the UIs, Ajie designs and implements services that keep
+            systems talking: SAP integrations, grading APIs, and ticketing /
+            workflow engines.
+            <details class="stack-details">
+              <summary>See back-end projects</summary>
+              <ul>
+                <li>
+                  <strong>United Tractors – Back End Developer</strong> · ASP.NET
+                  middleware services for SAP–API–mobile WMS integration.
+                </li>
+                <li>
+                  Designed microservices to sync data from Harmoni Mitra Utama
+                  API into WMS.
+                </li>
+                <li>
+                  Built RESTful APIs for Job in Progress and ZBOH web to-do
+                  list for the Command Center division.
+                </li>
+                <li>
+                  <strong>Dharma Satya Nusantara – Back-End Developer</strong>
+                  · APIs for grading apps, serving both mobile and web; Spot
+                  Check and Approve Sampling Grading features.
+                </li>
+                <li>
+                  <strong>Putra Mulia Telecommunication (Huawei Supplier)</strong>
+                  · Data services powering SPE digitalization workflow.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="tile-visual"></div>
+        </div>
+      </article>
+
+      <!-- Data & Automation -->
+      <article class="tile tile-data reveal">
+        <header class="tile-header">
+          <h2 class="tile-title">Data &amp; Automation</h2>
+          <p class="tile-sub">
+            Python crawlers, digitalization, and operational data flows.
+          </p>
+        </header>
+        <div class="tile-body">
+          <div class="tile-copy">
+            Some projects are all about getting reliable data where it needs to
+            go – from NASA weather feeds to Komatsu part books and digital
+            PDFs.
+            <details class="stack-details">
+              <summary>See automation work</summary>
+              <ul>
+                <li>
+                  <strong>United Tractors – Data Crawler</strong> · Python
+                  services to crawl NASA weather data for forecasting.
+                </li>
+                <li>
+                  Automated BOM extraction from Komatsu Part Book website with
+                  Python.
+                </li>
+                <li>
+                  Built automation service to retrieve data from the
+                  Undercarriage Management System Application.
+                </li>
+                <li>
+                  <strong>Putra Mulia Telecommunication</strong> · SPE
+                  digitalization with automated data reconciliation and PDF
+                  generation.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="tile-visual"></div>
+        </div>
+      </article>
+
+      <!-- WordPress & Marketing / Misc -->
+      <article class="tile tile-wp reveal">
+        <header class="tile-header">
+          <h2 class="tile-title">WordPress, Marketing &amp; Extras</h2>
+          <p class="tile-sub">
+            Landing pages, campaigns, and cross-channel assets.
+          </p>
+        </header>
+        <div class="tile-body">
+          <div class="tile-copy">
+            Beyond pure engineering, Ajie also supports marketing and growth:
+            WordPress revamps, landing pages, and ad-ready experiences that
+            reflect the product brand.
+            <details class="stack-details">
+              <summary>See supporting work</summary>
+              <ul>
+                <li>
+                  <strong>Benefit (Singapore)</strong> · Revamped main
+                  WordPress site, created &amp; edited ads landing pages, and
+                  integrated forms with Excel sheets via jQuery.
+                </li>
+                <li>
+                  <strong>Deloitte Consulting</strong> · Front-end developer
+                  for UOB Infinity’s Bulk BI-FAST feature (UOB Indonesia) with
+                  defect fixes and performance improvements.
+                </li>
+                <li>
+                  <strong>Charged Indonesia</strong> · Implemented subscription
+                  and test ride flows on website / mobile site with Vue.js and
+                  Nuxt.js using Xendit as payment gateway.
+                </li>
+              </ul>
+            </details>
+          </div>
+          <div class="tile-visual"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:32px;">
+      <article class="card reveal" style="text-align:center;">
+        <header>
+          <p class="card-eyebrow">Contact</p>
+          <h2 class="card-title">Need a bit of Ajie's magic?</h2>
+          <p class="card-sub">
+            If you need something special built, call Ajie quickly — he’s one of a kind
+            and cannot be duplicated.
+          </p>
+        </header>
+        <div style="margin-top:14px;font-size:14px;color:#1d1d1f;">
+          <p><strong>Name:</strong> Ajie Putra Perdana</p>
+          <p><strong>Phone:</strong> +62 8782 1790 323</p>
+          <p><strong>Email:</strong> ajieputra40@gmail.com</p>
+          <p><strong>Location:</strong> Bekasi, Indonesia</p>
+          <p><strong>LinkedIn:</strong> Ajie Putra Perdana</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      This CV layout is inspired by Apple’s homepage – sections as “products”,
+      with each tech stack presented like a feature tile.
+    </footer>
+  </main>
+
+  <!-- Scroll reveal script -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18
+      }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
