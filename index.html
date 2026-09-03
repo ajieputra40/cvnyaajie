@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ajie Putra Perdana – Tech Stack CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajie Putra Perdana - Project Manager & Software Developer</title>
+  <meta
+    name="description"
+    content="Apple-inspired web CV for Ajie Putra Perdana, Project Manager & Software Developer with 7+ years of experience in digital solutions, Odoo ERP, system integration, web, mobile, and automation."
+  />
   <style>
     :root {
       --bg-page: #f5f5f7;
@@ -15,7 +19,7 @@
       --radius-lg: 28px;
       --radius-md: 24px;
       --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.18);
-      --max-width: 980px;
+      --max-width: 1040px;
       --transition: 0.25s ease-out;
     }
 
@@ -25,12 +29,17 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text",
-        "Inter", sans-serif;
+        "Inter", "Segoe UI", sans-serif;
       background: var(--bg-page);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
 
     a {
@@ -38,18 +47,11 @@
       text-decoration: none;
     }
 
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 16px 60px;
-    }
-
     img {
       max-width: 100%;
       display: block;
     }
 
-    /* Top nav (very Apple-ish) */
     .nav {
       background: rgba(244, 244, 246, 0.92);
       backdrop-filter: blur(18px);
@@ -66,23 +68,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
       font-size: 12px;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-weight: 600;
+      gap: 8px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .nav-logo {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 15%, #fff, #ff9f4a);
-      box-shadow: 0 6px 16px rgba(255, 159, 74, 0.6);
+      background:
+        radial-gradient(circle at 28% 18%, #ffffff 0 16%, transparent 17%),
+        conic-gradient(from 210deg, #ff8c3f, #ffb86c, #ffd6a1, #0071e3, #ff8c3f);
+      box-shadow: 0 8px 20px rgba(255, 159, 74, 0.5);
     }
 
     .nav-links {
@@ -105,7 +110,7 @@
       bottom: 0;
       width: 0;
       height: 1px;
-      background: #0071e3;
+      background: var(--blue-apple);
       transition: width 0.18s ease-out;
     }
 
@@ -113,46 +118,33 @@
       width: 100%;
     }
 
-    /* Hero gift-like section */
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
     .hero {
-      padding: 40px 0 28px;
+      padding: 42px 0 28px;
       text-align: center;
     }
 
-    .hero-icon {
-      width: 90px;
-      height: 90px;
-      border-radius: 34px;
-      margin: 0 auto 20px;
-      background: conic-gradient(
-        from 210deg,
-        #ff8c3f,
-        #ffb86c,
-        #ffd6a1,
-        #ffd6a1,
-        #ff8c3f
-      );
-      position: relative;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-    }
-
-    .hero-icon::before {
-      /* simple "gift ribbon" */
-      content: "";
-      position: absolute;
-      inset: 22px 38px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.94);
-    }
-
     .hero-photo {
-      width: 110px;
-      height: 110px;
+      width: 112px;
+      height: 112px;
       border-radius: 50%;
-      margin: 14px auto 4px;
+      margin: 0 auto 16px;
       overflow: hidden;
       border: 3px solid #ffffff;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.85), transparent 28%),
+        linear-gradient(145deg, #111111, #394150 54%, #ff8c3f);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: 700;
     }
 
     .hero-photo img {
@@ -161,22 +153,30 @@
       object-fit: cover;
     }
 
-    .hero-eyebrow {
-      font-size: 14px;
-      color: #6e6e73;
-      margin-bottom: 4px;
+    .hero-photo span {
+      position: absolute;
     }
 
-    .hero-title {
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 600;
+    .hero-eyebrow {
+      font-size: 14px;
+      color: var(--text-muted);
       margin-bottom: 6px;
     }
 
+    .hero-title {
+      max-width: 850px;
+      margin: 0 auto 10px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.03;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
     .hero-subtitle {
-      font-size: 17px;
-      color: #6e6e73;
-      margin-bottom: 16px;
+      max-width: 760px;
+      margin: 0 auto 20px;
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-muted);
     }
 
     .hero-actions {
@@ -190,9 +190,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 9px 16px;
+      min-height: 40px;
+      padding: 9px 17px;
       border-radius: 999px;
       font-size: 13px;
+      font-weight: 600;
       border: 1px solid transparent;
       cursor: pointer;
       background: transparent;
@@ -201,27 +203,28 @@
     }
 
     .btn-primary {
-      background: #0071e3;
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.4);
+      background: var(--blue-apple);
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.36);
     }
 
     .btn-primary:hover {
       background: #0077ed;
-      box-shadow: 0 12px 40px rgba(0, 113, 227, 0.5);
+      box-shadow: 0 12px 40px rgba(0, 113, 227, 0.45);
+      transform: translateY(-1px);
     }
 
     .btn-ghost {
-      border-color: #d2d2d7;
-      color: #0071e3;
+      border-color: var(--border-soft);
+      color: var(--blue-apple);
       background: #ffffff;
     }
 
     .btn-ghost:hover {
       background: #f5f5f7;
+      transform: translateY(-1px);
     }
 
-    /* Big "main product" card (for core profile) */
     .panel-main {
       background: #000000;
       color: #f5f5f7;
@@ -233,91 +236,135 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .panel-main::before {
+      content: "";
+      position: absolute;
+      inset: -70px -80px auto auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 113, 227, 0.38), transparent 66%);
+      pointer-events: none;
+    }
+
     .panel-main-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.85fr);
+      gap: 28px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .panel-main-title {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     .panel-main-tagline {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .panel-main-copy {
       font-size: 15px;
       color: #c7c7cc;
-      margin-bottom: 16px;
-      max-width: 430px;
+      margin-bottom: 18px;
+      max-width: 620px;
     }
 
     .panel-main-metadata {
+      display: grid;
+      gap: 7px;
       font-size: 13px;
-      color: #9f9fa6;
-      line-height: 1.7;
+      color: #d7d7dd;
+    }
+
+    .panel-main-metadata a {
+      color: #8ec5ff;
     }
 
     .panel-main-cta {
-      margin-top: 18px;
+      margin-top: 20px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
 
-    .panel-main-cta .btn {
-      font-size: 13px;
-    }
-
     .panel-main-visual {
       border-radius: 36px;
-      background: radial-gradient(circle at 10% 0, #ffb452, #d24b07 60%);
-      height: 240px;
+      min-height: 270px;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       box-shadow: 0 26px 80px rgba(0, 0, 0, 0.85);
+      background:
+        radial-gradient(circle at 12% 8%, #ffd39a 0 12%, transparent 13%),
+        radial-gradient(circle at 92% 24%, rgba(255, 255, 255, 0.28), transparent 18%),
+        linear-gradient(135deg, #ff8c3f, #d24b07 46%, #111111 100%);
     }
 
-    .panel-main-visual::before,
-    /* .panel-main-visual::after {
-      content: "";
+    .visual-window {
       position: absolute;
-      border-radius: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      background: rgba(0, 0, 0, 0.18);
-    } */
-
-    .panel-main-visual::before {
-      inset: 16px 18px 44px 18px;
+      inset: 18px 18px 64px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
     }
 
-    .panel-main-visual::after {
-      inset: 82px 60px 20px 60px;
-      background: rgba(0, 0, 0, 0.65);
+    .visual-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .visual-bar:nth-child(2) {
+      width: 78%;
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .visual-bar:nth-child(3) {
+      width: 62%;
+      background: rgba(255, 255, 255, 0.32);
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .visual-chip {
+      min-height: 46px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.14);
     }
 
     .panel-main-pill {
       position: absolute;
-      left: 20px;
-      top: 20px;
-      padding: 4px 10px;
+      left: 22px;
+      top: 22px;
+      padding: 5px 11px;
       font-size: 11px;
       border-radius: 999px;
       background: rgba(0, 0, 0, 0.58);
       color: #ffeeda;
       border: 1px solid rgba(255, 255, 255, 0.35);
+      z-index: 2;
     }
 
     .panel-main-info {
       position: absolute;
       left: 24px;
+      right: 24px;
       bottom: 22px;
       font-size: 12px;
       color: #ffeeda;
@@ -325,34 +372,110 @@
 
     .panel-main-info strong {
       display: block;
-      font-weight: 600;
+      font-weight: 700;
+      color: #ffffff;
     }
 
-    /* Dual panels (top row after hero) */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border-radius: 22px;
+      padding: 20px 18px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .stat-label {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .section {
+      margin-top: 18px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      text-align: center;
+      padding: 20px 0 16px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.12;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      max-width: 690px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
     .grid-two {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 16px;
-      margin-bottom: 16px;
+    }
+
+    .grid-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card,
+    .tile,
+    .wide-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      overflow: hidden;
     }
 
     .card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: 26px 22px 18px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      padding: 26px 22px 20px;
       display: grid;
-      grid-template-rows: auto 1fr;
-      row-gap: 18px;
+      gap: 18px;
     }
 
-    .card-header {
+    .wide-card {
+      padding: 28px 24px 22px;
+    }
+
+    .card-header,
+    .tile-header {
       text-align: center;
     }
 
-    .card-eyebrow {
+    .card-eyebrow,
+    .tile-eyebrow {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
@@ -361,199 +484,164 @@
     }
 
     .card-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 2px;
+      font-size: 22px;
+      line-height: 1.16;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
 
-    .card-sub {
+    .card-sub,
+    .tile-sub {
       font-size: 14px;
       color: var(--text-muted);
     }
 
     .card-content {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
       gap: 18px;
       align-items: center;
     }
 
-    .card-copy {
+    .card-copy,
+    .tile-copy,
+    .body-copy {
       font-size: 13px;
       color: #1d1d1f;
       line-height: 1.7;
     }
 
-    .card-visual {
+    .card-visual,
+    .tile-visual {
       border-radius: 22px;
-      height: 150px;
+      min-height: 160px;
       border: 1px solid rgba(0, 0, 0, 0.06);
       position: relative;
       overflow: hidden;
     }
 
-    /* Flutter visual */
-    .card-flutter .card-visual {
-      background: radial-gradient(circle at 0 0, #61dafb, #01579b 60%);
+    .visual-digital {
+      background:
+        linear-gradient(135deg, rgba(0, 113, 227, 0.15), transparent 30%),
+        radial-gradient(circle at 20% 20%, #ffb86c, transparent 28%),
+        linear-gradient(135deg, #0a0a0a, #333840);
     }
 
-    .card-flutter .card-visual::before,
-    .card-flutter .card-visual::after {
+    .visual-odoo {
+      background:
+        radial-gradient(circle at 18% 20%, #ffffff 0 13%, transparent 14%),
+        radial-gradient(circle at 88% 82%, rgba(255, 255, 255, 0.74), transparent 24%),
+        linear-gradient(135deg, #875a7b, #00a09d);
+    }
+
+    .visual-integration {
+      background:
+        linear-gradient(135deg, #002b5c, #4285f4);
+    }
+
+    .visual-web {
+      background:
+        radial-gradient(circle at 22% 22%, rgba(255, 255, 255, 0.72), transparent 18%),
+        linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    .visual-mobile {
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.62), transparent 20%),
+        linear-gradient(135deg, #61dafb, #01579b 62%);
+    }
+
+    .visual-data {
+      background:
+        linear-gradient(135deg, #ffd54f, #ff7043);
+    }
+
+    .card-visual::before,
+    .tile-visual::before {
       content: "";
       position: absolute;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
+      inset: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
       background: rgba(0, 0, 0, 0.16);
     }
 
-    .card-flutter .card-visual::before {
-      inset: 12px 14px 50px 14px;
-    }
-
-    .card-flutter .card-visual::after {
-      inset: 76px 54px 12px 54px;
-    }
-
-    /* Odoo visual */
-    .card-odoo .card-visual {
-      background: radial-gradient(circle at 0 0, #7c4dff, #4caf50 65%);
-    }
-
-    .card-odoo .card-visual::before,
-    .card-odoo .card-visual::after {
+    .card-visual::after,
+    .tile-visual::after {
       content: "";
       position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.78);
+      left: 38px;
+      right: 38px;
+      bottom: 24px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
     }
 
-    .card-odoo .card-visual::before {
-      width: 80px;
-      height: 80px;
-      right: -10px;
-      bottom: -10px;
-      opacity: 0.9;
-    }
-
-    .card-odoo .card-visual::after {
-      width: 50px;
-      height: 50px;
-      left: 16px;
-      top: 18px;
-      opacity: 0.85;
-    }
-
-    /* 3x2 grid like Apple’s product tiles */
-    .grid-tiles {
+    .project-list {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 16px;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .project-item {
+      padding: 12px 13px;
+      border-radius: 16px;
+      background: #f5f5f7;
+      border: 1px solid #e8e8ed;
+    }
+
+    .project-item strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .project-item span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f5f5f7;
+      border: 1px solid #e7e7ec;
+      color: #2a2a2c;
+      font-size: 12px;
+      white-space: nowrap;
     }
 
     .tile {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: 22px 20px 16px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+      padding: 22px 20px 18px;
       display: grid;
-      grid-template-rows: auto 1fr;
-      row-gap: 14px;
-    }
-
-    .tile-header {
-      text-align: center;
+      gap: 14px;
     }
 
     .tile-title {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 19px;
+      line-height: 1.2;
+      font-weight: 700;
       margin-bottom: 4px;
-    }
-
-    .tile-sub {
-      font-size: 13px;
-      color: var(--text-muted);
     }
 
     .tile-body {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 16px;
-      align-items: center;
+      gap: 14px;
     }
 
-    .tile-copy {
-      font-size: 13px;
-      color: #1d1d1f;
-      line-height: 1.7;
-    }
-
-    .tile-visual {
-      border-radius: 20px;
-      height: 130px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tile-backend .tile-visual {
-      background: linear-gradient(135deg, #002b5c, #4285f4);
-    }
-
-    .tile-backend .tile-visual::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      background: rgba(0, 0, 0, 0.24);
-    }
-
-    .tile-data .tile-visual {
-      background: linear-gradient(135deg, #ffd54f, #ff7043);
-    }
-
-    .tile-data .tile-visual::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(255, 255, 255, 0.6);
-    }
-
-    .tile-web .tile-visual {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-    }
-
-    .tile-web .tile-visual::before,
-    .tile-web .tile-visual::after {
-      content: "";
-      position: absolute;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.87);
-    }
-
-    .tile-web .tile-visual::before {
-      inset: 12px 18px 60px 18px;
-    }
-
-    .tile-web .tile-visual::after {
-      inset: 70px 40px 12px 40px;
-    }
-
-    .tile-wp .tile-visual {
-      background: radial-gradient(circle at 0 0, #21759b, #111827 70%);
-    }
-
-    .tile-wp .tile-visual::before {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.75);
-    }
-
-    /* Details (like "Learn more") */
     details.stack-details {
       margin-top: 10px;
       border-top: 1px solid #e5e5ea;
@@ -564,14 +652,19 @@
       list-style: none;
       cursor: pointer;
       font-size: 13px;
-      color: #0071e3;
+      color: var(--blue-apple);
       display: inline-flex;
       align-items: center;
       gap: 4px;
+      font-weight: 600;
+    }
+
+    details.stack-details summary::-webkit-details-marker {
+      display: none;
     }
 
     details.stack-details summary::after {
-      content: "›";
+      content: ">";
       font-size: 12px;
       transition: transform 0.2s ease-out;
     }
@@ -581,50 +674,92 @@
     }
 
     details.stack-details ul {
-      margin-top: 6px;
+      margin-top: 8px;
       padding-left: 18px;
       font-size: 12px;
       color: var(--text-muted);
       line-height: 1.7;
     }
 
-    /* Footer */
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #f5f5f7;
+      border: 1px solid #e8e8ed;
+    }
+
+    .timeline-date {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-role {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .timeline-company {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .timeline-copy {
+      color: #1d1d1f;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .contact-card {
+      background: #000000;
+      color: #f5f5f7;
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.08;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #c7c7cc;
+      max-width: 650px;
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     footer {
-      margin-top: 26px;
+      margin-top: 28px;
       font-size: 11px;
       color: var(--text-muted);
       text-align: center;
     }
 
-    /* Responsive */
-    @media (max-width: 880px) {
-      .panel-main-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .panel-main-visual {
-        margin-top: 16px;
-      }
-      .grid-two,
-      .grid-tiles {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .card-content,
-      .tile-body {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .panel-main {
-        padding-inline: 20px;
-      }
-    }
-
-    /* Scroll reveal animation */
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -637,61 +772,135 @@
       transform: translateY(0);
     }
 
-    /* Optional stagger delay */
     .reveal-delay-1 {
       transition-delay: 0.1s;
     }
+
     .reveal-delay-2 {
       transition-delay: 0.2s;
     }
+
     .reveal-delay-3 {
       transition-delay: 0.3s;
     }
+
     .reveal-delay-4 {
       transition-delay: 0.4s;
+    }
+
+    @media (max-width: 960px) {
+      .panel-main-inner,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stats,
+      .grid-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 10px 12px;
+      }
+
+      .grid-two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .card-content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .timeline-item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding-inline: 12px;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .panel-main,
+      .contact-card {
+        padding-inline: 20px;
+      }
+
+      .panel-main-visual {
+        min-height: 235px;
+      }
+
+      .stats,
+      .grid-tiles {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .panel-main-cta,
+      .contact-links {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-left">
-        <div class="nav-logo"></div>
+        <div class="nav-logo" aria-hidden="true"></div>
         <span>Ajie Putra Perdana</span>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#top">Overview</a>
-        <a href="#flutter">Flutter &amp; Mobile</a>
+        <a href="#digital-solutions">Digital Solutions</a>
         <a href="#odoo">Odoo / ERP</a>
+        <a href="#engineering">Engineering</a>
         <a href="#web">Web</a>
-        <a href="#backend">Back End</a>
+        <a href="#mobile">Mobile</a>
+        <a href="#technology">Technology</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="page" id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <!-- Photo with reveal -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-photo reveal reveal-delay-1">
-        <img src="ajie.png" alt="Ajie Putra Perdana" />
+        <span>AP</span>
+        <img src="ajie.png" alt="Ajie Putra Perdana" onerror="this.style.display='none'" />
       </div>
-
       <p class="hero-eyebrow reveal reveal-delay-1">
-        Give your team something special.
+        Project Manager - Software Developer - Digital Solutions
       </p>
-      <h1 class="hero-title reveal reveal-delay-2">
-        A CV that feels like a product page.
+      <h1 class="hero-title reveal reveal-delay-2" id="hero-title">
+        Building systems that connect business and technology.
       </h1>
       <p class="hero-subtitle reveal reveal-delay-3">
-        Explore Ajie’s 6+ years of experience by tech stack – Flutter, Odoo, web,
-        back end, data, and more.
+        Ajie Putra Perdana is a Project Manager & Software Developer with 7+ years of experience across business applications, ERP & Odoo, system integration, digital workflows, web, mobile, APIs, automation, and technical project delivery.
       </p>
-
       <div class="hero-actions reveal reveal-delay-4">
-        <a class="btn btn-primary" href="#">
+        <a class="btn btn-primary" href="./Ajie_Putra_Perdana_2026_newest.pdf" download>
           Download full CV (PDF)
         </a>
         <a class="btn btn-ghost" href="#contact">
@@ -700,385 +909,575 @@
       </div>
     </section>
 
-    <!-- MAIN PROFILE PANEL -->
-    <section>
-      <article class="panel-main reveal">
-        <div class="panel-main-inner">
-          <div>
-            <h2 class="panel-main-title">Ajie Putra Perdana</h2>
-            <p class="panel-main-tagline">Software Developer · Full-stack across platforms.</p>
-            <p class="panel-main-copy">
-              From supply chain and banking dashboards to EV super apps and harvest
-              management systems, Ajie builds products that connect APIs, devices,
-              and real users. Strong in Flutter, web front-end, ASP.NET back end,
-              Python automation, and ERP/Odoo.
+    <section class="panel-main reveal" aria-label="Profile summary">
+      <div class="panel-main-inner">
+        <div>
+          <h2 class="panel-main-title">Ajie Putra Perdana</h2>
+          <p class="panel-main-tagline">Project Manager & Software Developer</p>
+          <p class="panel-main-copy">
+            A technical-business bridge with hands-on software delivery experience across enterprise systems, internal workflow platforms, customer-facing products, integrations, and production support. Current work spans Odoo development, full-stack systems, vendor coordination, UAT, go-live readiness, and Digital Solutions project delivery.
+          </p>
+          <div class="panel-main-metadata">
+            <span><strong>Based in:</strong> Bekasi, Indonesia</span>
+            <span><strong>Phone:</strong> <a href="tel:+6287821790323">+62 8782 1790 323</a></span>
+            <span><strong>Email:</strong> <a href="mailto:ajieputra40@gmail.com">ajieputra40@gmail.com</a></span>
+            <span><strong>Education:</strong> Bachelor's Degree in Computer Science, Institut Teknologi Nasional</span>
+          </div>
+          <div class="panel-main-cta">
+            <a class="btn btn-primary" href="mailto:ajieputra40@gmail.com">Email Ajie</a>
+            <a class="btn btn-ghost" href="#digital-solutions">View project delivery</a>
+          </div>
+        </div>
+        <div class="panel-main-visual" aria-hidden="true">
+          <div class="panel-main-pill">Digital solution delivery</div>
+          <div class="visual-window">
+            <div class="visual-bar"></div>
+            <div class="visual-bar"></div>
+            <div class="visual-bar"></div>
+            <div class="visual-grid">
+              <div class="visual-chip"></div>
+              <div class="visual-chip"></div>
+              <div class="visual-chip"></div>
+            </div>
+          </div>
+          <div class="panel-main-info">
+            <strong>From requirement to go-live.</strong>
+            Business workflow, system design, engineering, integration, UAT, and production readiness.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats reveal" aria-label="Career highlights">
+      <div class="stat-card">
+        <span class="stat-value">7+</span>
+        <span class="stat-label">years in software delivery</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">6+</span>
+        <span class="stat-label">custom Odoo modules delivered</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">ERP</span>
+        <span class="stat-label">workflow, integration, and reporting</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">PM</span>
+        <span class="stat-label">vendor, UAT, roadmap, and go-live</span>
+      </div>
+    </section>
+
+    <section class="section" id="digital-solutions">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Digital Solutions & Project Delivery</p>
+        <h2 class="section-title">Turning operational problems into shipped systems.</h2>
+        <p class="section-subtitle">
+          Ajie currently leads and coordinates digital product initiatives across PMT and Aventis, connecting stakeholders, vendors, developers, and business users through structured delivery.
+        </p>
+      </div>
+      <div class="grid-two">
+        <article class="card reveal">
+          <div class="card-header">
+            <p class="card-eyebrow">Current Role</p>
+            <h3 class="card-title">PT Putra Mulia Telecommunication / PT Aventis Solusi Prima</h3>
+            <p class="card-sub">Odoo Developer - Full-Stack Developer - IT Project Manager, Digital Solutions</p>
+          </div>
+          <div class="card-content">
+            <p class="card-copy">
+              Serves as Project Manager and System Integrator for Asset & Inventory Management implementation at PT Putra Mulia Telecommunication, coordinating PMT stakeholders and HashMicro as solution vendor through requirements alignment, implementation monitoring, issue resolution, UAT, and go-live readiness.
             </p>
-            <div class="panel-main-metadata">
-              <strong>Based in:</strong> Bekasi, Indonesia<br />
-              <strong>Phone:</strong> +62 8782 1790 323<br />
-              <strong>Email:</strong> ajieputra40@gmail.com<br />
-              <strong>LinkedIn:</strong> Ajie Putra Perdana<br />
-              <strong>Education:</strong> Bachelor’s Degree in Computer Science,
-              Institut Teknologi Nasional
-            </div>
+            <div class="card-visual visual-digital" aria-hidden="true"></div>
+          </div>
+        </article>
 
-            <div class="panel-main-cta">
-              <a class="btn btn-primary" href="#flutter">View by tech stack</a>
-              <a class="btn btn-ghost" href="#backend">See integrations work</a>
+        <article class="card reveal reveal-delay-1">
+          <div class="card-header">
+            <p class="card-eyebrow">R&D Portfolio</p>
+            <h3 class="card-title">Aventis internal digital products</h3>
+            <p class="card-sub">Concepts, workflows, technical requirements, and implementation roadmaps</p>
+          </div>
+          <div class="project-list">
+            <div class="project-item">
+              <strong>Huawei PO Line Monitoring</strong>
+              <span>Monitoring and tracking Huawei PO lines and operational progress.</span>
+            </div>
+            <div class="project-item">
+              <strong>Aventis HRMS</strong>
+              <span>Internal HR management platform and employee workflow digitalization.</span>
+            </div>
+            <div class="project-item">
+              <strong>Vendor Management System</strong>
+              <span>Vendor and subcontractor work management, progress tracking, supporting documentation, and operational monitoring.</span>
+            </div>
+            <div class="project-item">
+              <strong>CRM - PO to Payment Tracking</strong>
+              <span>Commercial tracking from opportunity and PO through project execution, invoicing, and payment.</span>
             </div>
           </div>
+        </article>
+      </div>
 
-          <div class="panel-main-visual">
-            <div class="panel-main-pill">Multi-stack in one profile</div>
-            <div class="panel-main-info">
-              <strong>6+ years</strong>
-              Shipping mobile apps, dashboards, and services<br />
-              Telecom · Banking · EV · Palm Oil · Government · Media
+      <article class="wide-card reveal" style="margin-top: 16px;">
+        <div class="project-list">
+          <div class="project-item">
+            <strong>Asset Management System</strong>
+            <span>Digital asset lifecycle management covering assignment, transfer, return, inventory, and asset history.</span>
+          </div>
+          <div class="project-item">
+            <strong>E-OPEX</strong>
+            <span>Digital operational expenditure workflow and monitoring system.</span>
+          </div>
+          <div class="project-item">
+            <strong>SPKA Management - Megah Selaju Sdn. Bhd., Malaysia</strong>
+            <span>Acts as Project Manager for requirements analysis, workflow design, development planning, UAT, deployment, and go-live with an Odoo Developer.</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="odoo">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Odoo / ERP</p>
+        <h2 class="section-title">Custom modules for HR, inventory, vendors, assets, and approvals.</h2>
+        <p class="section-subtitle">
+          Odoo work includes end-to-end module design, models, views, security, workflows, reports, documents, REST endpoints, scheduled jobs, and business process automation.
+        </p>
+      </div>
+      <div class="grid-two">
+        <article class="card reveal">
+          <div class="card-header">
+            <p class="card-eyebrow">Delivered Modules</p>
+            <h3 class="card-title">6+ custom Odoo modules</h3>
+            <p class="card-sub">Fixed Asset Registry, Duty Roster, Training Certificate, Recruitment Intake, Vendor Management, Consumable Item Request</p>
+          </div>
+          <div class="card-content">
+            <p class="card-copy">
+              Delivered models, views, security access rules, record rules, workflows, reports, printable QWeb documents, asset labels, barcodes, QR codes, automated numbering, and lifecycle states from draft to approved to done.
+            </p>
+            <div class="card-visual visual-odoo" aria-hidden="true"></div>
+          </div>
+          <details class="stack-details">
+            <summary>Odoo scope</summary>
+            <ul>
+              <li>Role-based approvals, chatter, activities, multi-company and warehouse support.</li>
+              <li>Audit trails for internal control and compliance needs.</li>
+              <li>REST endpoints, scheduled jobs, server actions, automated emails and in-app notifications.</li>
+              <li>Performance improvements using domain filters, computed fields, and SQL constraints.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card reveal reveal-delay-1">
+          <div class="card-header">
+            <p class="card-eyebrow">HR & Operations</p>
+            <h3 class="card-title">Workflow suite in Odoo</h3>
+            <p class="card-sub">HR workflows, ATK request, approvals, inventory tracking, and Great Day HRMS integration</p>
+          </div>
+          <div class="project-list">
+            <div class="project-item">
+              <strong>HR workflow suite</strong>
+              <span>Resignation, exit clearance, contract management, warning letters, mutation, promotion, demotion, and drug test workflow integrated with Great Day HRMS.</span>
+            </div>
+            <div class="project-item">
+              <strong>ATK workflow</strong>
+              <span>Stationery request workflow with approval routing and inventory tracking.</span>
+            </div>
+            <div class="project-item">
+              <strong>Manual step reduction</strong>
+              <span>Reduced manual steps in HR and inventory flows through workflow automation and structured approval states.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="engineering">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Software Engineering & Integration</p>
+        <h2 class="section-title">Backend, frontend, APIs, dashboards, and enterprise integrations.</h2>
+        <p class="section-subtitle">
+          Experience spans SAP middleware, ASP.NET microservices, React dashboards, banking features, payment integrations, OWS workflows, and internal business systems.
+        </p>
+      </div>
+      <div class="grid-tiles">
+        <article class="tile reveal">
+          <div class="tile-header">
+            <p class="tile-eyebrow">United Tractors</p>
+            <h3 class="tile-title">SAP and warehouse middleware</h3>
+            <p class="tile-sub">ASP.NET services, APIs, microservices</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-integration" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Built middleware and microservices for SAP, APIs, warehouse management, Job in Progress, and ZBOH web to-do list for Command Center operations.
+            </p>
+          </div>
+        </article>
+
+        <article class="tile reveal reveal-delay-1">
+          <div class="tile-header">
+            <p class="tile-eyebrow">Huawei</p>
+            <h3 class="tile-title">OWS dashboards and workflows</h3>
+            <p class="tile-sub">React.js, Huawei OWS, monitoring</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-data" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Developed Service Auto Pause and Resume for CCH Ticket, XL Axiata Customer Complaint Dashboard, Work Order Dashboard, and TSS Dashboard.
+            </p>
+          </div>
+        </article>
+
+        <article class="tile reveal reveal-delay-2">
+          <div class="tile-header">
+            <p class="tile-eyebrow">Deloitte / UOB</p>
+            <h3 class="tile-title">Banking frontend delivery</h3>
+            <p class="tile-sub">UOB Infinity Bulk BI-FAST</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-web" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Developed the Bulk BI-FAST feature for UOB Infinity and resolved defect tickets to improve functionality and performance.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="web">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Web & Hospitality</p>
+        <h2 class="section-title">Responsive sites, business platforms, booking flows, and commercial systems.</h2>
+        <p class="section-subtitle">
+          Web experience includes corporate websites, reservation platforms, e-commerce, admin portals, ad experiences, landing pages, and production business applications.
+        </p>
+      </div>
+      <div class="grid-two">
+        <article class="card reveal">
+          <div class="card-header">
+            <p class="card-eyebrow">Bali Hospitality</p>
+            <h3 class="card-title">Restu Semesta Group villa reservation</h3>
+            <p class="card-sub">Full-stack reservation website for Bali villas</p>
+          </div>
+          <div class="card-content">
+            <p class="card-copy">
+              Developed a villa reservation website including frontend UI, backend system architecture, booking and inquiry handling, villa listing pages, admin-side content updates, database design, backend APIs, form handling, and responsive mobile-desktop delivery.
+            </p>
+            <div class="card-visual visual-web" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <article class="card reveal reveal-delay-1">
+          <div class="card-header">
+            <p class="card-eyebrow">Corporate & Product Web</p>
+            <h3 class="card-title">Websites and production portals</h3>
+            <p class="card-sub">PMT sister companies, Benefit, Galeri 24, RCTI+, RawApp, and more</p>
+          </div>
+          <div class="project-list">
+            <div class="project-item">
+              <strong>PMT sister companies</strong>
+              <span>Delivered responsive corporate websites for PT Samudra Cahaya Artha and PT Sinar Global Inovasi.</span>
+            </div>
+            <div class="project-item">
+              <strong>Benefit - Singapore</strong>
+              <span>Revamped WordPress website, created and edited ad landing pages, and integrated WordPress forms with Excel sheets using jQuery.</span>
+            </div>
+            <div class="project-item">
+              <strong>Galeri 24 / Pegadaian</strong>
+              <span>Developed admin and e-commerce web experiences for buying and selling gold using ReactJS.</span>
+            </div>
+            <div class="project-item">
+              <strong>RCTI+</strong>
+              <span>Built mobile web ad banners, story ads, innoPlayer integration, Trebel landing page, and WebSocket player integration.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="mobile">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Mobile Engineering</p>
+        <h2 class="section-title">Mobile apps for EV, IoT, harvest operations, marketplaces, and field tools.</h2>
+        <p class="section-subtitle">
+          Ajie has delivered Flutter, Kotlin, and Android Native work across customer apps, operational apps, queue systems, e-commerce, NFC, RFID, and IoT-integrated mobile products.
+        </p>
+      </div>
+      <div class="grid-tiles">
+        <article class="tile reveal">
+          <div class="tile-header">
+            <p class="tile-eyebrow">Charged Indonesia</p>
+            <h3 class="tile-title">Charged Super App</h3>
+            <p class="tile-sub">Flutter, IoT bike control, Xendit flow</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-mobile" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Built mobile features for bike control, customer accounts, subscriptions, purchases, deployment through Apple Developer and Google Play Console, plus Vue/Nuxt web flows with Xendit integration.
+            </p>
+          </div>
+        </article>
+
+        <article class="tile reveal reveal-delay-1">
+          <div class="tile-header">
+            <p class="tile-eyebrow">Dharma Satya Nusantara</p>
+            <h3 class="tile-title">HARMONY and operations apps</h3>
+            <p class="tile-sub">Harvest, canteen queue, grading APIs</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-data" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Developed HARMONY harvest tracking, Drupadi canteen queue app, ELHP enhancements, grading APIs, Spot Check, Approve Sampling Grading, CRUD pages, and mobile UI design.
+            </p>
+          </div>
+        </article>
+
+        <article class="tile reveal reveal-delay-2">
+          <div class="tile-header">
+            <p class="tile-eyebrow">Field & Consumer Apps</p>
+            <h3 class="tile-title">Kotlin, NFC, RFID, and marketplaces</h3>
+            <p class="tile-sub">Pangan App, Permana Solution, Huawei</p>
+          </div>
+          <div class="tile-body">
+            <div class="tile-visual visual-integration" aria-hidden="true"></div>
+            <p class="tile-copy">
+              Developed food e-commerce mobile features, Garuda Eyes mobile app, NFC cable data tools, and UHF RFID apps for ODP box data reading and writing.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="data-automation">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Data & Automation</p>
+        <h2 class="section-title">Crawlers, workflow automation, reporting, and operational data services.</h2>
+        <p class="section-subtitle">
+          Automation work covers Python crawlers, BOM extraction, NASA weather data, OWS workflows, SPE digitalization, PDF generation, and internal reporting.
+        </p>
+      </div>
+      <div class="grid-two">
+        <article class="card reveal">
+          <div class="card-header">
+            <p class="card-eyebrow">Python & Data</p>
+            <h3 class="card-title">Data crawling and extraction</h3>
+            <p class="card-sub">NASA weather, Komatsu Part Book, Undercarriage Management System</p>
+          </div>
+          <div class="card-content">
+            <p class="card-copy">
+              Developed Python services for NASA weather data collection, Bill of Materials extraction from Komatsu Part Book, and automated retrieval from the Undercarriage Management System Application.
+            </p>
+            <div class="card-visual visual-data" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <article class="card reveal reveal-delay-1">
+          <div class="card-header">
+            <p class="card-eyebrow">Compliance & Support</p>
+            <h3 class="card-title">Whistleblowing and ticketing systems</h3>
+            <p class="card-sub">CodeIgniter, MySQL, routing, dashboard, digital sign</p>
+          </div>
+          <div class="project-list">
+            <div class="project-item">
+              <strong>Whistleblowing System</strong>
+              <span>Internal system with anonymous reporting, evidence upload, case routing, email alerts, role-based visibility, and compliance tracking.</span>
+            </div>
+            <div class="project-item">
+              <strong>IT Ticketing Support</strong>
+              <span>Enhanced handover workflow, BAST digital sign, and generated dashboard tickets.</span>
+            </div>
+            <div class="project-item">
+              <strong>Digital SPE T1 troubleshooting</strong>
+              <span>Created structured reporting and approval traceability through Huawei OWS platform.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Core Technology</p>
+        <h2 class="section-title">A broad stack for practical delivery.</h2>
+        <p class="section-subtitle">
+          Technologies are grouped by how Ajie uses them in delivery: backend, frontend, mobile, ERP, infrastructure, data automation, UI, and collaboration.
+        </p>
+      </div>
+      <article class="wide-card reveal">
+        <div class="grid-tiles">
+          <div>
+            <h3 class="tile-title">Backend</h3>
+            <div class="chip-row">
+              <span class="chip">ASP.NET</span>
+              <span class="chip">Flask</span>
+              <span class="chip">CodeIgniter</span>
+              <span class="chip">Laravel</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">REST API</span>
+              <span class="chip">PHP</span>
+              <span class="chip">Python</span>
+              <span class="chip">C#</span>
+              <span class="chip">Java</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="tile-title">Frontend</h3>
+            <div class="chip-row">
+              <span class="chip">ReactJS</span>
+              <span class="chip">Vue.js</span>
+              <span class="chip">Nuxt.js</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">jQuery</span>
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="tile-title">Mobile</h3>
+            <div class="chip-row">
+              <span class="chip">Flutter</span>
+              <span class="chip">Dart</span>
+              <span class="chip">Kotlin</span>
+              <span class="chip">Android Native</span>
+              <span class="chip">IoT integration</span>
+              <span class="chip">NFC</span>
+              <span class="chip">UHF RFID</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="tile-title">Data & Databases</h3>
+            <div class="chip-row">
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">Selenium</span>
+              <span class="chip">PyAutoGUI</span>
+              <span class="chip">PhantomJS</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="tile-title">ERP & Infrastructure</h3>
+            <div class="chip-row">
+              <span class="chip">Odoo</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">DevOps</span>
+              <span class="chip">Unix / Linux</span>
+              <span class="chip">Windows</span>
+              <span class="chip">macOS</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="tile-title">Delivery & UI</h3>
+            <div class="chip-row">
+              <span class="chip">Jira</span>
+              <span class="chip">Azure TFS</span>
+              <span class="chip">Slack</span>
+              <span class="chip">Figma</span>
+              <span class="chip">Adobe XD</span>
+              <span class="chip">CorelDRAW</span>
             </div>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- FIRST ROW: FLUTTER / ODOO -->
-    <section class="grid-two">
-      <!-- Flutter & Mobile -->
-      <article class="card card-flutter reveal" id="flutter">
-        <header class="card-header">
-          <p class="card-eyebrow">Mobile · Flutter · Kotlin</p>
-          <h2 class="card-title">Flutter &amp; Mobile Experience</h2>
-          <p class="card-sub">
-            All the control in your hand – EV bikes, harvest fields, canteens, and more.
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="card-copy">
-            Ajie has built multiple production mobile apps, from EV bike control
-            to palm oil harvest tracking, queue management, and NFC/RFID tools.
-            Apps are designed to feel simple for users, but are fully connected to
-            APIs, IoT devices, and back-end systems.
-            <details class="stack-details">
-              <summary>See mobile projects</summary>
-              <ul>
-                <li>
-                  <strong>Huawei – Garuda Eyes</strong> · Flutter mobile app
-                  for network monitoring.
-                </li>
-                <li>
-                  <strong>Charged Indonesia – Charged Super App</strong> · EV
-                  bike control (on/off, speed), account, subscriptions, and
-                  purchases.
-                </li>
-                <li>
-                  <strong>Dharma Satya Nusantara – HARMONY</strong> · Mobile
-                  harvest management app for palm oil operations.
-                </li>
-                <li>
-                  <strong>Dharma Satya Nusantara – Drupadi</strong> · Queue
-                  management app for the canteen; enhancements for ELHP to
-                  support harvesters and transporters.
-                </li>
-                <li>
-                  <strong>Pangan App</strong> · Kotlin-based food e-commerce
-                  app for ordering and payments with user management.
-                </li>
-                <li>
-                  <strong>Permana Solution</strong> · Mobile apps for reading
-                  and writing data via NFC and UHF RFID on cables and ODP boxes.
-                </li>
-              </ul>
-            </details>
+    <section class="section" id="leadership">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Delivery & Leadership</p>
+        <h2 class="section-title">Hands-on engineering with project ownership.</h2>
+        <p class="section-subtitle">
+          Ajie's recent trajectory combines software engineering, system integration, stakeholder coordination, vendor management, UAT, go-live planning, and practical business process design.
+        </p>
+      </div>
+      <article class="wide-card reveal">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2025 - Present</div>
+            <div>
+              <div class="timeline-role">Odoo Developer, Full-Stack Developer, IT Project Manager - Digital Solutions</div>
+              <div class="timeline-company">PT Putra Mulia Telecommunication / PT Aventis Solusi Prima - Jakarta, Indonesia</div>
+              <p class="timeline-copy">
+                Delivers Odoo modules, internal systems, Digital Solutions roadmaps, HashMicro implementation coordination, R&D product evaluation, and SPKA Management project delivery for Malaysia.
+              </p>
+            </div>
           </div>
-          <div class="card-visual"></div>
-        </div>
-      </article>
-
-      <!-- Odoo / ERP / Systems -->
-      <article class="card card-odoo reveal" id="odoo">
-        <header class="card-header">
-          <p class="card-eyebrow">ERP · Integrations · Odoo-style</p>
-          <h2 class="card-title">Odoo &amp; Operational Systems</h2>
-          <p class="card-sub">
-            Structured workflows for real-world operations – from warehouses to plantations.
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="card-copy">
-            Ajie’s server-side work often looks like ERP: approvals, grading,
-            harvest tracking, ticketing, digital forms, and reconciliations.
-            At <strong>PT Putra Mulia Telecommunication</strong>, he is also
-            building Odoo-based internal tools for fixed assets, approval
-            workflows, and item requests used across teams.
-            <details class="stack-details">
-              <summary>See ERP-style work</summary>
-              <ul>
-                <li>
-                  <strong>United Tractors</strong> · Middleware and microservices
-                  integrating SAP, APIs, and warehouse management systems – the
-                  backbone for operational data.
-                </li>
-                <li>
-                  <strong>Dharma Satya Nusantara</strong> · HARMONY &amp;
-                  grading systems with APIs, Spot Check and Approve Sampling
-                  Grading menus, and CRUD pages for master data.
-                </li>
-                <li>
-                  <strong>Putra Mulia Telecommunication – SPE Digitalization</strong>
-                  · Workflow application for SPE digitalization, including
-                  reconciliation and PDF generation to replace manual processes.
-                </li>
-                <li>
-                  <strong>Putra Mulia Telecommunication – Internal Odoo Apps</strong>
-                  · Fixed asset tools, multi-step approval workflows, and item
-                  request modules for internal company operations.
-                </li>
-                <li>
-                  <strong>Hexadata Primakom – Gate Out Parking System</strong>
-                  · Java desktop app used operationally at RSUD Ujungberung.
-                </li>
-                <li>
-                  <strong>Ministry of Villages</strong> · Admin website and
-                  public data portal for national-level operations.
-                </li>
-              </ul>
-            </details>
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2023 - Mar 2025</div>
+            <div>
+              <div class="timeline-role">Mobile, Backend, Frontend Developer, UI Designer</div>
+              <div class="timeline-company">Dharma Satya Nusantara - Jakarta, Indonesia</div>
+              <p class="timeline-copy">
+                Built mobile harvest operations, canteen queue, grading APIs, CRUD pages, spot check and approval workflows, and HARMONY mobile UI.
+              </p>
+            </div>
           </div>
-          <div class="card-visual"></div>
+          <div class="timeline-item">
+            <div class="timeline-date">May 2022 - Feb 2023</div>
+            <div>
+              <div class="timeline-role">Mobile Developer and Front-End Developer</div>
+              <div class="timeline-company">Charged Indonesia - Jakarta, Indonesia</div>
+              <p class="timeline-copy">
+                Delivered EV customer app features, IoT bike control collaboration, app store operations, website test ride and subscription flows, Xendit payment integration, and My Account features.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Sep 2019 - May 2022</div>
+            <div>
+              <div class="timeline-role">Backend, Data, Mobile, Frontend, and UI Delivery</div>
+              <div class="timeline-company">United Tractors and Huawei - Jakarta, Indonesia</div>
+              <p class="timeline-copy">
+                Worked across ASP.NET middleware, microservices, Python automation, Flutter mobile development, React dashboards, OWS workflows, and Figma UI mockups.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
     </section>
 
-    <!-- SECOND / THIRD ROW: OTHER STACKS -->
-    <section class="grid-tiles">
-      <!-- Web Frontend -->
-      <article class="tile tile-web reveal" id="web">
-        <header class="tile-header">
-          <h2 class="tile-title">Web Front-End</h2>
-          <p class="tile-sub">
-            React, Vue, CodeIgniter, jQuery – from dashboards to e-commerce.
+    <section class="section" id="contact">
+      <div class="contact-card reveal">
+        <div>
+          <h2>Let us build practical digital systems.</h2>
+          <p>
+            Available for conversations around Project Management, Software Development, Odoo / ERP, business workflow digitalization, system integration, web and mobile engineering, and automation.
           </p>
-        </header>
-        <div class="tile-body">
-          <div class="tile-copy">
-            Ajie has delivered a wide range of web interfaces: telecom and
-            banking dashboards, admin portals for ministries and airports, gold
-            e-commerce, TV / media layouts, and static marketing pages.
-            <details class="stack-details">
-              <summary>See front-end projects</summary>
-              <ul>
-                <li>
-                  <strong>Advanced Technology Facility</strong> · Supply chain
-                  management UI using CodeIgniter.
-                </li>
-                <li>
-                  <strong>RawApp Start Up</strong> · Caringin Traditional
-                  Market SCM, Mitra Utama Rasa SCM (CodeIgniter) and merchant
-                  admin portal for Sultan Mahmud Badaruddin II Airport
-                  (ReactJS).
-                </li>
-                <li>
-                  <strong>Huawei</strong> · XL Axiata Customer Complaint and
-                  Work Order dashboards using Huawei OWS; TSS Dashboard using
-                  React.js; Garuda Eyes website layouts.
-                </li>
-                <li>
-                  <strong>Galeri 24 (Pegadaian)</strong> · Admin and
-                  e-commerce website for gold transactions in the Galeri 24 app
-                  using ReactJS.
-                </li>
-                <li>
-                  <strong>Studypool</strong> · jQuery plugin to display and
-                  download PDFs efficiently.
-                </li>
-                <li>
-                  <strong>Indo Alt Coin</strong> · Static marketing website
-                  using pure HTML and CSS.
-                </li>
-                <li>
-                  <strong>Ministry of Villages</strong> · Admin and public
-                  sites for managing and displaying ministry data.
-                </li>
-                <li>
-                  <strong>RCTI+</strong> · Ad banners, story ads, and Trebel
-                  Music landing page on mobile web, integrating innoPlayer and
-                  WebSockets.
-                </li>
-              </ul>
-            </details>
-          </div>
-          <div class="tile-visual"></div>
         </div>
-      </article>
-
-      <!-- Back End & Integrations -->
-      <article class="tile tile-backend reveal" id="backend">
-        <header class="tile-header">
-          <h2 class="tile-title">Back End &amp; Integrations</h2>
-          <p class="tile-sub">
-            ASP.NET, REST APIs, microservices – wired into SAP and beyond.
-          </p>
-        </header>
-        <div class="tile-body">
-          <div class="tile-copy">
-            Behind the UIs, Ajie designs and implements services that keep
-            systems talking: SAP integrations, grading APIs, and ticketing /
-            workflow engines.
-            <details class="stack-details">
-              <summary>See back-end projects</summary>
-              <ul>
-                <li>
-                  <strong>United Tractors – Back End Developer</strong> · ASP.NET
-                  middleware services for SAP–API–mobile WMS integration.
-                </li>
-                <li>
-                  Designed microservices to sync data from Harmoni Mitra Utama
-                  API into WMS.
-                </li>
-                <li>
-                  Built RESTful APIs for Job in Progress and ZBOH web to-do
-                  list for the Command Center division.
-                </li>
-                <li>
-                  <strong>Dharma Satya Nusantara – Back-End Developer</strong>
-                  · APIs for grading apps, serving both mobile and web; Spot
-                  Check and Approve Sampling Grading features.
-                </li>
-                <li>
-                  <strong>Putra Mulia Telecommunication (Huawei Supplier)</strong>
-                  · Data services powering SPE digitalization workflow.
-                </li>
-              </ul>
-            </details>
-          </div>
-          <div class="tile-visual"></div>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:ajieputra40@gmail.com">ajieputra40@gmail.com</a>
+          <a class="btn btn-ghost" href="tel:+6287821790323">Call Ajie</a>
+          <a class="btn btn-ghost" href="./Ajie_Putra_Perdana_2026_newest.pdf" download>Download CV</a>
         </div>
-      </article>
-
-      <!-- Data & Automation -->
-      <article class="tile tile-data reveal">
-        <header class="tile-header">
-          <h2 class="tile-title">Data &amp; Automation</h2>
-          <p class="tile-sub">
-            Python crawlers, digitalization, and operational data flows.
-          </p>
-        </header>
-        <div class="tile-body">
-          <div class="tile-copy">
-            Some projects are all about getting reliable data where it needs to
-            go – from NASA weather feeds to Komatsu part books and digital
-            PDFs.
-            <details class="stack-details">
-              <summary>See automation work</summary>
-              <ul>
-                <li>
-                  <strong>United Tractors – Data Crawler</strong> · Python
-                  services to crawl NASA weather data for forecasting.
-                </li>
-                <li>
-                  Automated BOM extraction from Komatsu Part Book website with
-                  Python.
-                </li>
-                <li>
-                  Built automation service to retrieve data from the
-                  Undercarriage Management System Application.
-                </li>
-                <li>
-                  <strong>Putra Mulia Telecommunication</strong> · SPE
-                  digitalization with automated data reconciliation and PDF
-                  generation.
-                </li>
-              </ul>
-            </details>
-          </div>
-          <div class="tile-visual"></div>
-        </div>
-      </article>
-
-      <!-- WordPress & Marketing / Misc -->
-      <article class="tile tile-wp reveal">
-        <header class="tile-header">
-          <h2 class="tile-title">WordPress, Marketing &amp; Extras</h2>
-          <p class="tile-sub">
-            Landing pages, campaigns, and cross-channel assets.
-          </p>
-        </header>
-        <div class="tile-body">
-          <div class="tile-copy">
-            Beyond pure engineering, Ajie also supports marketing and growth:
-            WordPress revamps, landing pages, and ad-ready experiences that
-            reflect the product brand.
-            <details class="stack-details">
-              <summary>See supporting work</summary>
-              <ul>
-                <li>
-                  <strong>Benefit (Singapore)</strong> · Revamped main
-                  WordPress site, created &amp; edited ads landing pages, and
-                  integrated forms with Excel sheets via jQuery.
-                </li>
-                <li>
-                  <strong>Deloitte Consulting</strong> · Front-end developer
-                  for UOB Infinity’s Bulk BI-FAST feature (UOB Indonesia) with
-                  defect fixes and performance improvements.
-                </li>
-                <li>
-                  <strong>Charged Indonesia</strong> · Implemented subscription
-                  and test ride flows on website / mobile site with Vue.js and
-                  Nuxt.js using Xendit as payment gateway.
-                </li>
-              </ul>
-            </details>
-          </div>
-          <div class="tile-visual"></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" style="margin-top:32px;">
-      <article class="card reveal" style="text-align:center;">
-        <header>
-          <p class="card-eyebrow">Contact</p>
-          <h2 class="card-title">Need a bit of Ajie's magic?</h2>
-          <p class="card-sub">
-            If you need something special built, call Ajie quickly — he’s one of a kind
-            and cannot be duplicated.
-          </p>
-        </header>
-        <div style="margin-top:14px;font-size:14px;color:#1d1d1f;">
-          <p><strong>Name:</strong> Ajie Putra Perdana</p>
-          <p><strong>Phone:</strong> +62 8782 1790 323</p>
-          <p><strong>Email:</strong> ajieputra40@gmail.com</p>
-          <p><strong>Location:</strong> Bekasi, Indonesia</p>
-          <p><strong>LinkedIn:</strong> Ajie Putra Perdana</p>
-        </div>
-      </article>
+      </div>
     </section>
 
     <footer>
-      This CV layout is inspired by Apple’s homepage – sections as “products”,
-      with each tech stack presented like a feature tile.
+      Web CV for Ajie Putra Perdana - Project Manager & Software Developer. Update the Download CV buttons by replacing the PDF file path with the final hosted CV URL or local PDF filename.
     </footer>
   </main>
 
-  <!-- Scroll reveal script -->
   <script>
-    const reveals = document.querySelectorAll('.reveal');
+    const revealEls = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.18
-      }
-    );
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
 
-    reveals.forEach((el) => observer.observe(el));
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("reveal-visible"));
+    }
   </script>
 </body>
 </html>
